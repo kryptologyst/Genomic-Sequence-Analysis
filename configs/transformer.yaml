@@ -1,0 +1,36 @@
+# Transformer model configuration for genomic sequence analysis
+
+# Random seed for reproducibility
+seed: 42
+
+# Data configuration
+seq_len: 50
+num_samples: 1000
+batch_size: 16
+train_split: 0.7
+val_split: 0.15
+test_split: 0.15
+
+# Model configuration
+model_type: "transformer"
+hidden_dim: 128
+num_layers: 4
+dropout: 0.1
+
+# Training configuration
+learning_rate: 0.0005
+num_epochs: 15
+weight_decay: 1e-4
+
+# Evaluation configuration
+eval_metrics:
+  - "accuracy"
+  - "auroc"
+  - "auprc"
+  - "f1"
+
+# Paths
+data_dir: "data"
+checkpoint_dir: "checkpoints"
+assets_dir: "assets"
+logs_dir: "logs"
